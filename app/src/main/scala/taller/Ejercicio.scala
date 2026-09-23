@@ -9,12 +9,13 @@ class Ejercicio() {
   @tailrec
   final def sumOfSquares(n: Int, acc: Int = 0): Int = {
     if (n <= 0) acc
-    else sumOfSquares(n - 1, acc) // Completar: falta sumar el cuadrado de n
+    else sumOfSquares(n - 1, acc + n*n)
   }
 
   @tailrec
   final def sumOfNumbers(n: Int, acc: Int = 0): Int = {
     if (n <= 0) acc
-    else sumOfNumbers(n - 1, acc) // Completar: falta sumar n cuando es par
+    else if( n%2 == 0) sumOfNumbers(n-1, acc + n)
+    else sumOfNumbers(n - 1, acc)
   }
 }
